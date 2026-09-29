@@ -1,0 +1,44 @@
+=== TITLE (30 chars max) ===
+WeirdAge: Days, Not Years
+
+=== SHORT DESCRIPTION (80 chars max) ===
+Stop counting birthdays. Count days. Visceral chronological intelligence.
+
+=== FULL DESCRIPTION (4000 chars max) ===
+You're older than you think.
+
+People normally describe their age as "30 years old."
+WeirdAge translates that into visceral, surprising, and aesthetically arresting measurements:
+
+• 10,957 DAYS ALIVE
+• 262,977 HOURS ELAPSED
+• 15.8 MILLION MINUTES
+• 946.7 MILLION SECONDS
+• 1,566 SUNDAYS SURVIVED
+• 30 TRIPS AROUND THE SUN
+
+PUT THAT IN PERSPECTIVE:
+• 10,957 sunsets witnessed aboard Earth.
+• 28.2 Billion kilometers flown hitched to Earth's orbital velocity (~107,226 km/h).
+• 1.18 Billion continuous cardiac contractions without a reboot.
+• 10 years spent in deep restorative sleep.
+• 126 complete cellular red blood cell regenerations.
+
+THE SHARE CARD STUDIO:
+Turn your personal chronometry into a publication-grade 1080×1920 portrait card formatted for Instagram Stories, TikTok, Snapchat, and Messages. Choose from 4 industrial themes:
+• Editorial — Warm cream Swiss paper layout, high-kerning typography, terracotta accent.
+• Dark — Deep obsidian base, Slughouse MTX metadata stack, scanline texture.
+• Electric — High-voltage Acid Neon Lime (#D4FF00) and Cyber Cyan.
+• Weird — Surreal monochromatic horizontal split, inverted telemetry, ASCII crosshairs.
+
+100% PRIVATE & ZERO-KNOWLEDGE:
+• Zero accounts. Zero cloud servers.
+• Zero tracking, cookies, or ad networks.
+• All calculations run directly on your device.
+
+ONE-TIME $0.49 PRO PASS:
+No recurring subscriptions. Unlock all 4 themes, remove all branding watermarks from exported cards, and access deep cosmic telemetry.
+
+=== IN-APP PRODUCT ID ===
+com.slughouse.weirdage.pro_unlock_049
+Price: $0.49 USD
