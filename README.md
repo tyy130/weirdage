@@ -46,9 +46,9 @@ Enter Birthday ───► Upward Digit Reveal ───► Telemetric Perspect
 
 ## 📸 Visual Showcase
 
-| Input Deck | Chronometric Results |
-| :---: | :---: |
-| <img src="screenshots/01_input_screen.png" width="360" alt="WeirdAge Input Screen" /> | <img src="screenshots/02_results_screen.png" width="360" alt="WeirdAge Results Screen" /> |
+| Input Deck | Interactive Chrono Calendar | Chronometric Results |
+| :---: | :---: | :---: |
+| <img src="screenshots/01_input_screen.png" width="240" alt="WeirdAge Input Screen" /> | <img src="screenshots/11_interactive_calendar_open.png" width="240" alt="Interactive Calendar Modal" /> | <img src="screenshots/02_results_screen.png" width="240" alt="WeirdAge Results Screen" /> |
 
 | Editorial Theme (1080×1920) | Dark / Slughouse MTX Theme (1080×1920) |
 | :---: | :---: |

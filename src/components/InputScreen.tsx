@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { BirthDateInput } from '../types';
-import { isValidDate, isLeapYear, getDaysInMonth } from '../calculations/ageEngine';
+import { isValidDate } from '../calculations/ageEngine';
 import { audioHaptics } from '../utils/audioHaptics';
+import { CalendarPickerModal } from './CalendarPickerModal';
 import { ArrowRight, Sparkles, Calendar } from 'lucide-react';
 
 interface InputScreenProps {
@@ -21,6 +22,8 @@ export const InputScreen: React.FC<InputScreenProps> = ({ initialValue, onCalcul
   const [month, setMonth] = useState<number>(defaultMonth);
   const [day, setDay] = useState<number>(defaultDay);
   const [error, setError] = useState<string | null>(null);
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+  const dateInputRef = useRef<HTMLInputElement>(null);
 
   // Native date string for <input type="date">
   const toDateString = (y: number, m: number, d: number) => {
@@ -69,6 +72,13 @@ export const InputScreen: React.FC<InputScreenProps> = ({ initialValue, onCalcul
     audioHaptics.playTapSound();
   };
 
+  const handleDateSelected = (y: number, m: number, d: number) => {
+    setYear(y);
+    setMonth(m);
+    setDay(d);
+    setError(null);
+  };
+
   return (
     <div className="w-full max-w-xl mx-auto px-5 py-8 flex flex-col justify-between min-h-[calc(100vh-65px)]">
       {/* Hero Header */}
@@ -92,11 +102,22 @@ export const InputScreen: React.FC<InputScreenProps> = ({ initialValue, onCalcul
 
       {/* Main Input Form */}
       <form onSubmit={handleSubmit} className="my-8 space-y-6">
-        {/* Large Native & Stylized Date Picker Box */}
-        <div className="bg-zinc-950/80 border-2 border-zinc-800 rounded-xl p-5 hover:border-zinc-700 transition-colors relative group focus-within:border-electric-lime">
-          <label htmlFor="birthdate-picker" className="block text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2">
-            Select Date of Birth
-          </label>
+        {/* Large Interactive Date Picker Box */}
+        <div
+          onClick={() => {
+            audioHaptics.playTapSound();
+            setIsCalendarOpen(true);
+          }}
+          className="bg-zinc-950/80 border-2 border-zinc-800 rounded-xl p-5 hover:border-zinc-700 transition-colors relative group focus-within:border-electric-lime cursor-pointer"
+        >
+          <div className="flex items-center justify-between mb-2">
+            <label htmlFor="birthdate-picker" className="block text-xs font-mono text-zinc-500 uppercase tracking-wider cursor-pointer">
+              Select Date of Birth
+            </label>
+            <span className="text-[10px] font-mono text-electric-lime bg-zinc-900 px-2 py-0.5 rounded border border-zinc-800">
+              TAP TO OPEN CALENDAR
+            </span>
+          </div>
 
           <div className="flex items-center justify-between">
             <div className="font-mono text-2xl sm:text-3xl font-bold text-white tracking-tight">
@@ -107,20 +128,30 @@ export const InputScreen: React.FC<InputScreenProps> = ({ initialValue, onCalcul
               })}
             </div>
             
-            <div className="p-3 bg-zinc-900 rounded-lg text-zinc-400 group-hover:text-electric-lime transition-colors">
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                audioHaptics.playTapSound();
+                setIsCalendarOpen(true);
+              }}
+              aria-label="Open interactive calendar"
+              className="p-3 bg-zinc-900 hover:bg-zinc-800 rounded-lg text-zinc-400 group-hover:text-electric-lime hover:text-electric-lime transition-colors border border-zinc-800"
+            >
               <Calendar className="w-6 h-6" />
-            </div>
+            </button>
           </div>
 
-          {/* Invisible Native Overlay Input for full cross-platform compatibility */}
+          {/* Native hidden date input for browser autofill & fallback */}
           <input
+            ref={dateInputRef}
             id="birthdate-picker"
             type="date"
             value={toDateString(year, month, day)}
             max={toDateString(currentYear, new Date().getMonth() + 1, new Date().getDate())}
             min="1900-01-01"
             onChange={handleNativeChange}
-            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+            className="sr-only"
             aria-label="Enter your date of birth"
           />
         </div>
@@ -167,6 +198,16 @@ export const InputScreen: React.FC<InputScreenProps> = ({ initialValue, onCalcul
           🔒 100% OFFLINE // ZERO NETWORK CALLS // NO ACCOUNTS
         </p>
       </div>
+
+      {/* Interactive Calendar Picker Modal */}
+      <CalendarPickerModal
+        isOpen={isCalendarOpen}
+        onClose={() => setIsCalendarOpen(false)}
+        selectedYear={year}
+        selectedMonth={month}
+        selectedDay={day}
+        onSelectDate={handleDateSelected}
+      />
     </div>
   );
 };
