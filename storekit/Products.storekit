@@ -1,0 +1,47 @@
+{
+  "identifier" : "E2B7A849",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.49",
+      "familyShareable" : true,
+      "internalID" : "6478901234",
+      "localizations" : [
+        {
+          "description" : "Unlock all share themes, remove branding, and access cosmic telemetry.",
+          "displayName" : "WeirdAge Pro Pass",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.slughouse.weirdage.pro_unlock_049",
+      "referenceName" : "WeirdAge Pro Pass $0.49",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

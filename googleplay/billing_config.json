@@ -1,0 +1,21 @@
+{
+  "packageName": "com.slughouse.weirdage",
+  "inAppProducts": [
+    {
+      "productId": "com.slughouse.weirdage.pro_unlock_049",
+      "type": "inapp",
+      "status": "active",
+      "defaultPrice": {
+        "priceMicros": "490000",
+        "currency": "USD"
+      },
+      "listings": {
+        "en-US": {
+          "title": "WeirdAge Pro Pass",
+          "description": "Unlock all share themes, unbranded high-res export, and deep cosmic telemetry."
+        }
+      },
+      "purchaseType": "managedUser"
+    }
+  ]
+}

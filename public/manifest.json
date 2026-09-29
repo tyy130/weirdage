@@ -1,0 +1,28 @@
+{
+  "short_name": "WeirdAge",
+  "name": "WeirdAge — Chronometric Intelligence",
+  "description": "Stop counting birthdays. Count days.",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#000000",
+  "theme_color": "#0A0A0A",
+  "display": "standalone",
+  "orientation": "portrait"
+}
